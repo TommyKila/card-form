@@ -222,7 +222,7 @@ input:focus {
     body {
         height: auto;
         background-image: url(./images/bg-main-mobile.png);
-        background-size: 100vw 33vh;
+        background-size: 100vw 350px;
     }
 
     .container {
@@ -249,7 +249,7 @@ input:focus {
 @media only screen and (max-width: 650px) {
 
     body {
-        background-size: 100vw 23vh;
+        background-size: 100vw 200px;
     }
 
     .container {
