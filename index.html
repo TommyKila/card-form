@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <article>
+      <figure>
+        <img src="./images/bg-card-front.png" alt="bg-card-front">
+        <div class="card-info">
+          <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+            <path
+              d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+              stroke="#fff" />
+          </svg>
+          <p class="realtime-text" data-id="card-number">0000 0000 0000 0000</p>
+          <div class="card-inline">
+            <p class="realtime-text" data-id="cardholder-name">Jane Appleseed</p>
+            <p><span class="realtime-text" data-id="month">00</span>/<span class="realtime-text"
+                data-id="year">00</span></p>
+          </div>
+        </div>
+      </figure>
+
+      <figure>
+        <img src="./images/bg-card-back.png" alt="bg-card-back">
+        <div>
+          <p class="realtime-text" data-id="cvc">000</p>
+        </div>
+      </figure>
+    </article>
+
+    <article>
+
+      <form name="client-info">
+        <div>
+          <p>Cardholder Name</p>
+          <input type="text" class="input-field" id="cardholder-name" name="cardholder-name"
+            placeholder="e.g. Jane Appleseed" maxlength="30">
+        </div>
+        <div>
+          <p>Card Number</p>
+          <input type="text" class="input-field" id="card-number" name="card-number"
+            placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+        </div>
+        <div class="form-group">
+          <div>
+            <p>Exp. Date (MM/YY)</p>
+            <div>
+              <input type="text" class="input-field" id="month" name="month" placeholder="MM" maxlength="2">
+              <input type="text" class="input-field" id="year" name="year" placeholder="YY" maxlength="2">
+            </div>
+          </div>
+          <div>
+            <p>CVC</p>
+            <input type="text" class="input-field" id="cvc" name="cvc" placeholder="e.g. 123" maxlength="3">
+          </div>
+        </div>
+
+        <button type="submit" class="confirm-btn" name="confirm">Confirm</button>
+
+      </form>
+
+      <!-- Completed state start -->
+
+      <section class="complete-state">
+        <img src="./images/icon-complete.svg" alt="icon-complete">
+        <h1>Thank you!</h1> 
+        <p>We've added your card details</p> 
+        <button class="reset-btn">Continue</button> 
+      </section>
+    </article>
+
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
