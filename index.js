@@ -51,7 +51,7 @@ form.addEventListener('submit', function (e) {
 
     checkAlp(monthInput);
     checkAlp(yearInput);
-    checkAlp(cvcInput);
+    
 
     if (yearInput.value < 1 && yearInput.value !== "") {
         yearInput.parentElement.classList.add("wrong-year");
@@ -59,10 +59,11 @@ form.addEventListener('submit', function (e) {
         yearInput.parentElement.classList.remove("wrong-year");
     }
 
-    if (cvcInput.value.length !== 3 && cvcInput.value !== "") {
-        cvcInput.parentElement.classList.add("wrong-format");
+    if (cvcInput.value.length < 3 && cvcInput.value !== "") {
+        cvcInput.parentElement.classList.add("cvc-format");
     } else {
-        cvcInput.parentElement.classList.remove("wrong-format");
+        cvcInput.parentElement.classList.remove("cvc-format");
+        checkAlp(cvcInput);
     }
 
 
@@ -121,6 +122,7 @@ inputField.forEach(function (field) {
         });
     });
 });
+
 
 
 
