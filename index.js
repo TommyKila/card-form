@@ -11,7 +11,6 @@ const nameInput = document.getElementById('cardholder-name');
 const cvcInput = document.getElementById('cvc');
 let count = 0;
 let numberPattern = /^(?:[0-9]{4}) (?:[0-9]{4}) (?:[0-9]{4}) (?:[0-9]{4})$/;
-let alphCheck = /[a-zA-Z]/
 
 const defTextArr = Array.from(realtimeText)
 
@@ -39,7 +38,7 @@ form.addEventListener('submit', function (e) {
 
     if (!numberPattern.test(numberInput.value) && numberInput.value !== "") {
         numberInput.parentElement.classList.add("wrong-format");
-    } else { 
+    } else {
         numberInput.parentElement.classList.remove("wrong-format");
     }
 
@@ -49,21 +48,10 @@ form.addEventListener('submit', function (e) {
         monthInput.parentElement.classList.remove("wrong-month");
     }
 
-    checkAlp(monthInput);
-    checkAlp(yearInput);
-
-
-    if (yearInput.value < 1 && yearInput.value !== "") {
-        yearInput.parentElement.classList.add("wrong-year");
-    } else {
-        yearInput.parentElement.classList.remove("wrong-year");
-    }
-
     if (cvcInput.value.length < 3 && cvcInput.value !== "") {
         cvcInput.parentElement.classList.add("cvc-format");
     } else {
         cvcInput.parentElement.classList.remove("cvc-format");
-        checkAlp(cvcInput);
     }
 
 
@@ -90,16 +78,24 @@ function checkBlank(item) {
     }
 }
 
-function checkAlp(item) {
-    if (alphCheck.test(item.value)) {
-        item.parentElement.classList.add("wrong-format");
-    } else {
-        item.parentElement.classList.remove("wrong-format");
-    }
-}
+nameInput.addEventListener('input', function (e) { 
+    e.target.value = e.target.value.replace(/[^\a-z A-Z]/g, '');
+});
 
 numberInput.addEventListener('input', function (e) {
     e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+});
+
+monthInput.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\d]/g, '').trim();
+});
+
+yearInput.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\d]/g, '').trim();
+});
+
+cvcInput.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\d]/g, '').trim();
 });
 
 
