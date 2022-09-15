@@ -37,6 +37,12 @@ form.addEventListener('submit', function (e) {
         checkBlank(field);
     });
 
+    if (!numberPattern.test(numberInput.value) && numberInput.value !== "") {
+        numberInput.parentElement.classList.add("wrong-format");
+    } else { 
+        numberInput.parentElement.classList.remove("wrong-format");
+    }
+
     if (monthInput.value > 12 || monthInput.value < 1) {
         monthInput.parentElement.classList.add("wrong-month");
     } else {
