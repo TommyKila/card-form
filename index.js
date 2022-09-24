@@ -58,7 +58,7 @@ form.addEventListener('submit', function (e) {
     inputField.forEach(function (field) {
         const fieldParent = field.parentElement;
         if (!fieldParent.classList.contains("wrong-format") && !fieldParent.classList.contains("blank-alert") &&
-            !fieldParent.classList.contains("wrong-month")) {
+            !fieldParent.classList.contains("wrong-month") && !fieldParent.classList.contains("cvc-format")){
             count++;
         }
     });
