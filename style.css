@@ -208,7 +208,7 @@ input:focus {
 }
 
 .cvc-format::after {
-    content: "Must be 3 digit";
+    content: "Must be 3 digits";
 }
 
 .blank-alert input,
