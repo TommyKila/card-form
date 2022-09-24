@@ -136,8 +136,9 @@ figure>div {
     text-transform: uppercase;
 }
 
-.card-info>p {
+.card-info>h1 {
     font-size: 1.6rem;
+    font-weight: 500;
     letter-spacing: 0.1em;
     transform: translateY(200%);
 }
@@ -212,7 +213,7 @@ input:focus {
 }
 
 .cvc-format::after {
-    content: "Must be 3 digit numbers";
+    content: "Must be 3 digit";
 }
 
 .blank-alert input,
