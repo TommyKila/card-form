@@ -188,7 +188,6 @@ input:focus {
 .blank-alert::after,
 .wrong-format::after,
 .wrong-month::after,
-.wrong-year::after,
 .cvc-format::after {
     font-size: 0.55rem;
     color: hsl(0, 100%, 66%);
@@ -208,10 +207,6 @@ input:focus {
     content: "Wrong format";
 }
 
-.wrong-year::after {
-    content: "Invalid year";
-}
-
 .cvc-format::after {
     content: "Must be 3 digit";
 }
@@ -219,7 +214,7 @@ input:focus {
 .blank-alert input,
 .wrong-format input,
 .wrong-month input,
-.wrong-year input {
+.cvc-format input{
     border: 1.5px solid hsl(0, 100%, 66%);
 }
 
